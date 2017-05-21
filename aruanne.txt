@@ -1,0 +1,74 @@
+﻿Aruanne
+
+
+
+
+1.kirjeldus
+
+1.a sissejuhatus
+Sai paar aastat tagasi tehtud väike projekt, 
+et tekitada endale 
+mingisugunegi ettekujutus kasutajaliidesega töötamisest pythonis ja 
+katsetada masinõppega (selleni paraku ei jõudnudki).
+
+Iseloomult on tegemist tavalise trips-traps-trulli mänguga, millele 
+sai tehtud ka arvuti poolt kontrollitud vastane 
+(eesmärgiga treenida 
+loomata jäänud masinõppe programmi). 
+Vastane ei ole päris võitmatu, koodi
+ uurides või lihtsalt katse-eksitus meetodil testides 
+võib huvikorral 
+leida viisi selle võitmiseks. 
+Kursuse lõputööks valisin selle, sest leian, et tegemist oli huvitava projektiga, mis võiks teistelegi huvi pakkuda.
+
+2.b tehniline kirjeldus
+
+Mängu kaustas on kolm faili:
+	-the-game.py ehk põhiline n.ö rakenduse fail
+	-basicAI.py ehk vastase kontrollimise fail
+	-__init__.py fail mis võimaldab mul basicAI.py moodulina põhifaili importida
+
+Põhiline rakendus koosneb põhiliselt klassi Game definitsioonist ja
+valikulause, mis teeb sellest ühe eksemplaari.
+
+Klass Game joonistab initseerimise etapis kõigepealt akna, mille sisse tekitatakse 3x3 ruudustik
+sätestab mõned trips-traps-trulli mängu osa jaoks vajalikud muutujad algväärtustena ja alustab mängu.
+
+Mängu käiku ise kontrollivad klassi sisesed meetodid/funktsioonid move, ai_move ja game_checker ja mängulaua
+käivitab taaskäivitab init_game
+	
+	-move konfigureerib kuvataval mängulaual nupu vastavalt mängija käigule
+	-ai_move kutsub arvuti kontrollitava mängija koodi ning käivitab seejärel saadud käiku parameetrina kasutades
+	 funktsiooni move 
+	- funktsioon game_checker kontrollib, kas keegi on võitnud või on mängulaud täis ning mäng lõppeb viigina
+		Kui kumbagi neist sündmustest pole toimunud annab käigu teisele mängijale.
+
+Kõige viimane defineeritud funktsioon on funktsioon victory, mis olles mitte päris vastavuses oma nimega
+kuvab lõppenud mängu tulemuse hüpikaknaga ekraanile ning küsib kasutajalt, kas ta soovib uuesti mängida.
+	
+
+2. kasutusjuhend
+
+ 1) Käivita pythoniga fail the-game.py
+	-peaks avanema aken mänguväljaga
+ 2) Alusta mängu klikkides väljale kuhu soovid joonistada oma sümboli (suvaliselt genereeritult kas X või O)
+
+ 3) Mängi vastavalt teada tuntud trips-traps-trulli reeglitele
+
+3.Tööprotsess
+
+3.a ajakulu
+Programmi kirjutamine ise toimus ~nädala jooksul 2015. aasta suvel. Mängu kahele mängijale mängitavaks
+tegemine ja kasutajaliidese loomisele sellest umbes kaks päeva. Ülejäänud aeg kulus arvuti poolt kontrollitavale
+vastasele reeglistiku kirjutamiseks. Koodi hilisemaks ülevaatamiseks ja eestikeelsete kommentaaride lisamiseks kulus ~3 tundi.
+
+3.b Hinnang
+
+Natuke laisalt sai tehtud selle lõpputööga, esialgu oli plaanis teha lihtsamat sorti (10x10 ruudustikus) implementatsioon Connway Game of life'
+kuivõrd olen hetkel hõivatud reservõppekogunemisega Kevadtormil, siis paraku ei olnud aega seda lõpuni kirjutada ning tuli minna lihtsama vastupanu teed.
+
+Programmi endaga olen päris rahul, jah kasutajaliides võiks natukene moodsam välja näha ja arvuti poolt mängitav vastane ei ole päris võitmatu, aga üldmulje on
+päris hea. Tulevikus võiks lisada ka lugeja kui palju on üks-või teine mängija võitnud mänge, valiku mitmikmängu ja arvuti vastu mängimise vahel 
+ja joonistada nupud natukene ilusamateks.
+
+
